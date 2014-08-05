@@ -457,8 +457,8 @@ PHP;
 			$credentials["password"] = $mainframe->input->get('p');
 			if ($credentials['username'] && $credentials['password']) {
 				$options['remember'] = $mainframe->input->get('r');
-				//                $options["return"] = 'http://.......';
-				//                $options["entry_url"] = 'http://.......';
+				// $options["return"] = 'http://.......';
+				// $options["entry_url"] = 'http://.......';
 				// logout any joomla users
 				$mainframe->login($credentials, $options);
 			}

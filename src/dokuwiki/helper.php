@@ -46,22 +46,13 @@ class Helper extends Plugin
 
 	    if ($conf && isset($conf['authtype']))  {
 		    if ($conf['authtype'] == 'authmysql') {
-			    if (!class_exists('Jfusion_DokuWiki_Mysql')) {
-				    require_once('auth' . DIRECTORY_SEPARATOR . 'mysql.class.php');
-			    }
 			    $this->auth = new Auth_Mysql($this);
 		    } elseif ($conf['authtype'] == 'authplain') {
-			    if (!class_exists('Jfusion_DokuWiki_Plain')) {
-				    require_once('auth' . DIRECTORY_SEPARATOR . 'plain.class.php');
-			    }
 			    $this->auth = new Auth_Plain($this);
 		    }
 	    }
 
 	    if (!$this->auth) {
-		    if (!class_exists('Jfusion_DokuWiki_Basic')) {
-			    require_once('auth' . DIRECTORY_SEPARATOR . 'basic.class.php');
-		    }
 		    $this->auth = new Auth_Basic($this);
 	    }
     }
@@ -134,7 +125,6 @@ class Helper extends Plugin
         if (empty($dokuwiki_version)) {
             $source_path = $this->params->get('source_path');
 
-            jimport('joomla.filesystem.file');
             $file_version = file_get_contents($source_path . 'VERSION');
             $matches = array();
             if (preg_match('#([a-z]*)([0-9]*-[0-9]*-[0-9]*)([a-z]*)#is', $file_version, $matches)) {

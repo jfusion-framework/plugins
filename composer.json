@@ -1,0 +1,24 @@
+{
+    "name": "jfusion/plugins",
+    "type": "jfusion-framework",
+    "description": "JFusion Framework session related",
+    "keywords": ["jfusion", "framework", "plugins"],
+    "homepage": "https://github.com/jfusion-framework/plugins",
+    "license": "GPL-2.0+",
+    "require": {
+        "php": ">=5.3.10",
+        "jfusion/api": ">=0.1",
+        "jfusion/core": ">=0.1",
+        "jfusion/curl": ">=0.1",
+        "jfusion/plugin": ">=0.1",
+        "jfusion/user": ">=0.1",
+        "joomla/language": "~1.0",
+        "psr/log": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JFusion\\Plugins\\": "src/"
+        }
+    },
+    "minimum-stability" : "dev"
+}
